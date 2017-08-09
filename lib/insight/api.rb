@@ -85,6 +85,11 @@ module Insight
       @connection.get "/utils/estimatefee?nbBlocks=#{nbBlocks}"
     end
 
+    def block_hash(block_index)
+      resp = @connection.get "/block-index/#{block_index}"
+      resp.fetch :blockHash
+    end
+
     # extra methods
 
     def blocks_last
