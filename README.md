@@ -1,15 +1,15 @@
 # Insight
 
-Ruby SDK for insight.bitpay.com
+Ruby SDK for insight.bitpay.com - @makevoid's fork
 
 [![Gem Version][gem-version-image]][gem-version-url]
 
-## Installation
+## Install
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'insight'
+gem 'insight_bitpay', git: "https://github.com/makevoid/insight-ruby"
 ```
 
 And then execute:
@@ -23,45 +23,46 @@ Or install it yourself as:
 ## Usage
 
 ### Initialize the library
-  
+
   ```ruby
-    insight_api = Insight::API.new(network: 'btc')
-    # For testnet3
-    insight_api = Insight::API.new(network: 'tbtc')
+    class Explorer
+      extend Insight
+    end
+
+    explorer = Explorer.new network: 'btc'
   ```
 
 You can also change the Blockchain using:
   ```ruby
-    insight_api.network = 'tbtc'
+    explorer.network = 'tbtc'
   ```
 
-### Posible Methods
+### Callable RPC Methods
 
 You can use any of these methods with the initialized object or simply by calling:
 
   ```ruby
-    Insight.block(hash)
-    Insight.block_raw(hash)
-    Insight.transaction(hash)
-    Insight.push_transaction(hex)
-    Insight.address(address)
-    Insight.address_balance(address)
-    Insight.address_total_received(address)
-    Insight.address_total_sent(address)
-    Insight.address_unconfirmed_balance(address)
-    Insight.address_unspent_transactions(address, params = nil)
-    Insight.estimatefee(nbBlocks = 2)
+    Explorer.block hash
+    Explorer.block_raw hash
+    Explorer.transaction hash
+    Explorer.push_transaction hex
+    Explorer.address address
+    Explorer.address_balance address
+    Explorer.address_total_received address
+    Explorer.address_total_sent address
+    Explorer.address_unconfirmed_balance address
+    Explorer.address_unspent_transactions address
+    Explorer.estimatefee 2 # blocks
   ```
+
+Responses are Ruby Hashes and Arrays serialized from the JSON data structures returned by the block explorer(s).
 
 ## Contributing
 
-To bump the version you can use the `./bump` python script, just write it in the terminal to see the options.
+See the parent repo for instuctions on how to contribute to it, to contribute to this fork
 
-1. Fork it ( https://github.com/genaromadrid/insight-ruby/fork )
+1. Fork it ( https://github.com/makevoid/insight-ruby/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
- 
-[gem-version-image]: https://badge.fury.io/rb/Insight-ruby.svg
-[gem-version-url]: https://badge.fury.io/rb/Insight-ruby

@@ -6,11 +6,11 @@ require 'insight/version'
 Gem::Specification.new do |spec|
   spec.name          = 'insight_bitpay'
   spec.version       = Insight::VERSION
-  spec.authors       = ['Genaro Madrid']
-  spec.email         = ['genmadrid@gmail.com']
+  spec.authors       = ['Genaro Madrid, Francesco "makevoid" Canessa']
+  spec.email         = ['genmadrid@gmail.com, makevoid@gmail.com']
   spec.summary       = %q{Ruby SDK for insight.bitpay.com}
-  spec.description   = %q{Ruby SDK for insight.bitpay.com API}
-  spec.homepage      = 'https://github.com/genmadrid/insight-ruby'
+  spec.description   = %q{Ruby SDK for insight.bitpay.com API - makevoid's fork}
+  spec.homepage      = 'https://github.com/makevoid/insight-ruby'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
