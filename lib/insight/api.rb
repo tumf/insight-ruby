@@ -77,7 +77,7 @@ module Insight
     end
 
     def address_utxo(address, params = nil)
-      query = "?#{query_string params}" if params
+      query = query_string params if params
       @connection.get "/addr/#{address}/utxo#{query}"
     end
 
@@ -165,8 +165,8 @@ module Insight
       Date.today.to_time
     end
 
-    def query_string
-      map { |k, v| "#{k}=#{v}" } * '&'
+    def query_string(params)
+      '?' + params.map { |k, v| "#{k}=#{v}" } * '&'
     end
 
     def parse_resp(resp)
