@@ -18,8 +18,13 @@ module Insight
     @api ||= API.new network: network
   end
 
-  def_delegators :@api, :url=, :network=, :blocks, :block, :block_raw, :block_hash, :transaction, :rawtx, :push_transaction, :address, :address_balance, :address_total_received, :address_total_sent, :address_unconfirmed_balance, :address_unspent_transactions, :estimatefee, :blocks_last
+  def_delegators :@api, :url=, :network=, :blocks, :block, :block_raw, :block_hash, :transaction, :rawtx, :push_transaction, :address, :address_balance, :address_total_received, :address_total_sent, :address_unconfirmed_balance, :address_utxo, :estimatefee, :blocks_last
 
   alias :chain_tip :blocks_last
+
+  alias :balance :address_balance
+  alias :balance_unconfirmed :address_unconfirmed_balance
+
+  alias :estimate_fee :estimatefee
 
 end

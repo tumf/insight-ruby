@@ -76,18 +76,31 @@ module Insight
       @connection.get "/addr/#{address}/unconfirmedBalance"
     end
 
-    def address_unspent_transactions(address, params = nil)
+    def address_utxo(address, params = nil)
       query = "?#{query_string params}" if params
       @connection.get "/addr/#{address}/utxo#{query}"
     end
 
     def estimatefee(nbBlocks = 2)
-      @connection.get "/utils/estimatefee?nbBlocks=#{nbBlocks}"
+      resp = @connection.get "/utils/estimatefee?nbBlocks=#{nbBlocks}"
+      resp.values.first
     end
 
     def block_hash(block_index)
       resp = @connection.get "/block-index/#{block_index}"
       resp.fetch :blockHash
+    end
+
+    def sync
+      @connection.get "/sync"
+    end
+
+    def peer
+      @connection.get "/peer"
+    end
+
+    def status(method_name="getInfo")
+      @connection.get "/status?q=#{method_name}"
     end
 
     # extra methods
