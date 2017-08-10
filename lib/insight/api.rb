@@ -10,6 +10,7 @@ module Insight
       @api_version  = api_version
     end
 
+
     def url
       @url ||= case network
       when 'btc', 'btc-mainnet' then 'https://insight.bitpay.com/api'
@@ -146,6 +147,11 @@ module Insight
         count_target: blocks_ideal.round(1),
       }
     end
+    
+    alias :chain_tip :blocks_last
+    alias :balance :address_balance
+    alias :balance_unconfirmed :address_unconfirmed_balance
+    alias :estimate_fee :estimatefee
 
     private
 

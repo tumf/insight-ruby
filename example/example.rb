@@ -43,6 +43,7 @@ puts
 
 puts "Estimate Fee:"
 pp EXP.estimate_fee
+puts
 
 #
 # puts "Blocks:"
