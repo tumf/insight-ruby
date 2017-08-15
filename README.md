@@ -2,7 +2,6 @@
 
 Ruby SDK for insight.bitpay.com - @makevoid's fork
 
-[![Gem Version][gem-version-image]][gem-version-url]
 
 ## Install
 
