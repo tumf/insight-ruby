@@ -66,3 +66,9 @@ See the parent repo for instuctions on how to contribute to it, to contribute to
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+
+## Contributors
+
+- @makevoid - https://github.com/makevoid
+- @jorge-aceves - https://github.com/jorge-aceves
