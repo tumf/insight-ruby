@@ -50,7 +50,7 @@ You can use any of these methods with the initialized object or simply by callin
     Explorer.address_total_received address
     Explorer.address_total_sent address
     Explorer.address_unconfirmed_balance address
-    Explorer.address_unspent_transactions address
+    Explorer.address_utxo address
     Explorer.estimatefee 2 # blocks
   ```
 
