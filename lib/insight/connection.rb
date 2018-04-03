@@ -17,11 +17,11 @@ module Insight
       uri = endpoint_uri path
       begin
         response = RestClient::Request.execute method: method,  url: uri,  payload: payload,  ssl_version: 'SSLv23'
-        return response unless response.include?('{')
-        JSON.parse response, symbolize_names: true
       rescue Exception => e
         response = e.response
       end
+      return response unless response.include?('{')
+      JSON.parse response, symbolize_names: true
     end
 
     private
