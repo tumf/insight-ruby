@@ -13,6 +13,7 @@ module Insight
   MAIN_CHAIN = 'btc'
   TEST_CHAIN = 'btc-testnet'
   BCH_CHAIN  = 'bch'
+  TEST_BCH_CHAIN = 'bch-testnet'
 
   def api(network: MAIN_CHAIN)
     @api ||= API.new network: network
