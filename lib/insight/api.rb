@@ -14,8 +14,9 @@ module Insight
     def url
       @url ||= case network
       when 'btc', 'btc-mainnet' then 'https://insight.bitpay.com/api'
-      when "btc-testnet"        then 'https://test-insight.bitpay.com/api'
-      when "bch"                then 'http://blockdozer.com/insight-api' # TODO: recheck for https support, currently not available
+      when 'btc-testnet'        then 'https://test-insight.bitpay.com/api'
+      when 'bch'                then 'https://bch-insight.bitpay.com/api'
+      when 'bch-testnet'        then 'https://test-bch-insight.bitpay.com/api'
       else
         raise "Network not found, please specify 'btc', 'btc-testnet' or 'bch'"
       end
